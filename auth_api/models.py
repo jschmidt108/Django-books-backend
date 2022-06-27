@@ -9,9 +9,9 @@ class UserAccount(models.Model):
     username = models.CharField(max_length=200, unique=True)
     email = models.CharField(max_length=75, unique=True)
     password = models.CharField(max_length=1000)
-    hasRead = models.ManyToManyField(Book, related_name='books_read', blank=True)
-    isReading = models.ManyToManyField(Book, related_name='books_reading', blank=True)
-    toRead = models.ManyToManyField(Book, related_name='books_wantToRead', blank=True)
+    hasRead = models.ManyToManyField(Book, related_name='books_read', blank=True, null=True)
+    isReading = models.ManyToManyField(Book, related_name='books_reading', blank=True, null=True)
+    toRead = models.ManyToManyField(Book, related_name='books_wantToRead', blank=True, null=True)
     # userReviews = models.ManyToManyField(Review)
 
 
