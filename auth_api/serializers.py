@@ -25,6 +25,9 @@ class UserAccountSerializer(serializers.ModelSerializer):
         name=validated_data['name'],
         username=validated_data['username'],
         email=validated_data['email'],
+        hasRead=validated_data['hasRead'],
+        isReading=validated_data['isReading'],
+        toRead=validated_data['toRead'],
         password = make_password(validated_data['password'])
         )
         user.save()
